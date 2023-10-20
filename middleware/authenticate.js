@@ -20,6 +20,7 @@ function asureAuth(req, res, next) {
     }
     //usuario a enviar para el middleware
     req.user = payload;
+    //
     next();
   } catch (error) {
     res.status(400).send({ msg: "Invalid token" });
