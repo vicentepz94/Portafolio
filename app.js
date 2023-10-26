@@ -10,6 +10,8 @@ const app = express();
 const authRoutes = require("./router/auth");
 const userRoutes = require("./router/user");
 const menuRoutes = require("./router/menu");
+const postRoutes = require("./router/post");
+const proyectRoutes = require("./router/proyect");
 
 //Conf Body Parse
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -25,5 +27,7 @@ app.use(cors());
 app.use(`/api/${API_VERSION}`, authRoutes);
 app.use(`/api/${API_VERSION}`, userRoutes);
 app.use(`/api/${API_VERSION}`, menuRoutes);
+app.use(`/api/${API_VERSION}`, postRoutes);
+app.use(`/api/${API_VERSION}`, proyectRoutes);
 
 module.exports = app;
