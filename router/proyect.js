@@ -11,5 +11,6 @@ api.post(
   [md_auth.asureAuth, md_upload],
   ProyectController.createProyect
 );
+api.get("/proyect", ProyectController.getProyect);
 
 module.exports = api;

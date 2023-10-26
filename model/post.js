@@ -5,7 +5,6 @@ const PostSchema = mongoose.Schema({
   title: String,
   description: String,
   content: String,
-  active: Boolean,
   miniature: String,
   tag: String,
   path: {

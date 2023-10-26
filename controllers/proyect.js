@@ -18,6 +18,27 @@ async function createProyect(req, res) {
   }
 }
 
+async function getProyect(req, res) {
+  const { page = 1, limit = 10 } = req.query;
+
+  const options = {
+    page: parseInt(page),
+    limit: parseInt(limit),
+    sort: { created_at: "desc" },
+  };
+
+  Proyect.paginate({}, options, (error, postStored) => {
+    if (error) {
+      res
+        .status(400)
+        .send({ msg: "There was an error obtaining the projects" });
+    } else {
+      res.status(200).send(postStored);
+    }
+  });
+}
+
 module.exports = {
   createProyect,
+  getProyect,
 };
