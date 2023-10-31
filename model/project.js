@@ -1,7 +1,7 @@
 const mongoose = require("mongoose");
 const mongoosePaginate = require("mongoose-paginate");
 
-const ProyectSchema = mongoose.Schema({
+const ProjectSchema = mongoose.Schema({
   title: String,
   description: String,
   technology: String,
@@ -16,6 +16,6 @@ const ProyectSchema = mongoose.Schema({
   created_at: Date,
 });
 
-ProyectSchema.plugin(mongoosePaginate);
+ProjectSchema.plugin(mongoosePaginate);
 
-module.exports = mongoose.model("Proyect", ProyectSchema);
+module.exports = mongoose.model("Project", ProjectSchema);
