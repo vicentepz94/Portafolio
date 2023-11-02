@@ -12,6 +12,7 @@ api.post(
   ProjectController.createProject
 );
 api.get("/project", ProjectController.getAllProjects);
+api.get("/project/:path", ProjectController.getProject);
 api.patch(
   "/project/:id",
   [md_auth.asureAuth, md_upload],
@@ -22,6 +23,5 @@ api.delete(
   [md_auth.asureAuth],
   ProjectController.deteleProject
 );
-api.get("/project/:path", ProjectController.getProject);
 
 module.exports = api;
